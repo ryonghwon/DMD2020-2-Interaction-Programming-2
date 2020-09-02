@@ -39,7 +39,7 @@ MS 사의 소스코드 편집 툴입니다. [링크](https://code.visualstudio.c
 
 업무용 메신저로 오픈 채널, 비공식 채널을 통해 팀 구성원들과 소통할 수 있는 협업 툴입니다. [링크](https://slack.com/)
 
-인터랙션 프로그래밍 1 Slack 채널 : [https://dmd2020-2-ip2.slack.com/](https://dmd2020-2-ip2.slack.com/)
+인터랙션 프로그래밍 2 Slack 채널 : [https://dmd2020-2-ip2.slack.com/](https://dmd2020-2-ip2.slack.com/)
 
 <img src="https://a.slack-edge.com/b5ab6/marketing/img/downloads/screenshots/mac_screenshot@2x.png" width="600">
 
