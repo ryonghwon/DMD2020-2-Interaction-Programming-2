@@ -55,7 +55,7 @@
     <link rel="stylesheet" href="./css/reset.css"/>
 </head>
 <body>
-<h1>2Week - 09/10</h1>
+<h1>2Week - 09/16</h1>
 <h2>학번 / 이름</h2>
 <script src="./js/script.js" type="text/javascript"></script>
 </body>
