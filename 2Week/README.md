@@ -52,7 +52,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no"/>
     <title>2Week</title>
-    <link rel="stylesheet" href="./css/reset.css"/>
+    <link href="./css/reset.css" rel="stylesheet"/>
 </head>
 <body>
 <h1>2Week - 09/16</h1>
