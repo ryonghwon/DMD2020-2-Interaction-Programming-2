@@ -74,7 +74,6 @@ var logStyle = "padding:2px;background:#fff;border-radius:4px;color:#222;";
         아이디가 radio-2 가 아닌 input radio 요소의 부모 노드를 찾고, 자식 노드 label 요소에 emphasis 클래스를 추가합니다.
         */
         //Answer 10.
-        console.log("%c Answer 10.", logStyle);
 
 
         //Quest 11.
@@ -84,7 +83,6 @@ var logStyle = "padding:2px;background:#fff;border-radius:4px;color:#222;";
         2) 모든 자식 노드 a 요소들에 bold 클래스를 추가합니다.
         */
         //Answer 11.
-        console.log("%c Answer 11.", logStyle);
         
 
     });
