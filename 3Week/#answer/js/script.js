@@ -14,8 +14,6 @@ Quest 1.
 */
 // Answer 1.
 
-
-
 /*
 Quest 2.
 1. var cars = [‘Hyundai’, ‘Kia’, ‘Samsung’, ‘GM’]; 배열을 선언하고 값을 할당합니다.
@@ -24,16 +22,12 @@ Quest 2.
 */
 // Answer 2.
 
-
-
 /*
 Quest 3.
 1. 전역변수 document 의 속성 및 메서드 등을 console.log 메서드를 이용해서 출력하는 반복문을 작성합니다.
 2. 여러가지 방법의 반복문을 이용하여 작성해도 됩니다.
 */
 // Answer 3.
-
-
 
 /*
 Quest 4.
@@ -43,13 +37,9 @@ Quest 4.
 */
 // Answer 4.
 
-
-
 /*
 Quest 5.
 1. 객체, 배열, 반복문, 함수 등을 이용하여 자기 소개를 하는 문자열을 출력합니다.
 2. 자신의 소개를 합니다.
 */
 // Answer 5.
-
-
