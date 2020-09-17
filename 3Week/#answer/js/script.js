@@ -14,13 +14,69 @@ Quest 1.
 */
 // Answer 1.
 
+var selectors = new Object();
+// selectors.number = 2;
+// selectors['string'] = ' ';
+selectors = {
+    number: 2,
+    string: ' ',
+};
+// selectors.dom = ['header'];
+selectors['dom'] = ['header'];
+// Array.push();
+// selectors['dom'].push('main', 'footer');
+selectors['dom'].push('main');
+selectors['dom'].push('footer');
+delete selectors['string'];
+console.log(selectors);
+
 /*
 Quest 2.
 1. var cars = [‘Hyundai’, ‘Kia’, ‘Samsung’, ‘GM’]; 배열을 선언하고 값을 할당합니다.
 2. cars 배열 문자열 원소를 역순으로 출력하는 반복문을 작성합니다.
-3. console.log 메서드를 이용해서 cars 를 출력합니다.
+3. console.log 메서드를 이용해서 cars 의 원소값들을 출력합니다.
 */
 // Answer 2.
+
+var cars = ['Hyundai', 'Kia', 'Samsung', 'GM'];
+var i;
+// 1.
+for (i = 0; i < cars.length; i++) {
+    console.log(cars[cars.length - i - 1]);
+}
+// 2.
+var newCars = [];
+for (i = 0; i < cars.length; i++) {
+    newCars.unshift(cars[i]);
+}
+console.log(newCars);
+newCars = [];
+// 3.
+for (i = cars.length - 1; i >= 0; i--) {
+    console.log(cars[i]);
+    newCars.push(cars[i]);
+}
+console.log(newCars); // 각 값들을 통해서 새로운 배열을 만들고자 할 때.
+// 4.
+cars.reverse(); // 반대로 정렬!
+for (i = 0; i < cars.length; i++) {
+    console.log(cars[i]);
+}
+// 5.
+for (var index in cars) {
+    // index - string.
+    index = Number(index);
+    console.log(cars[index]);
+}
+// 6.
+for (var car of cars) {
+    console.log(car);
+}
+// 7.
+cars.forEach(function (car, index) {
+    // 첫번째 매개변수 - 값, 두번째 매개변수 - 순서(index)
+    console.log(car);
+});
 
 /*
 Quest 3.
@@ -29,6 +85,14 @@ Quest 3.
 */
 // Answer 3.
 
+// document - html 문서 자체를 의미. 브라우저에 파일이 실행되면 포함되어 있는 내장변수.
+console.log(document);
+// document.getElementById('');
+for (var property in document) {
+    // console.log(property);
+    console.log(document[property]);
+}
+
 /*
 Quest 4.
 1. var orders = { name : [‘본인 이름’], coffee : [‘아메리카노’, ‘에스프레소’, ‘카페라떼’] }; 객체를 선언하고 값을 할당합니다.
@@ -36,6 +100,15 @@ Quest 4.
 3. 문자열 : “name 님, 주문하신 coffee 1잔 나왔습니다.”
 */
 // Answer 4.
+
+var orders = { name: ['김용원'], coffee: ['아메리카노', '에스프레소', '카페라떼'] };
+var name = orders['name'];
+for (i = 0; i < orders['coffee'].length; i++) {
+    var coffee = orders['coffee'][i];
+    // console.log(coffee);
+    var msg = name + ' 님, 주문하신 ' + coffee + ' 1잔 나왔습니다.';
+    console.log(msg);
+}
 
 /*
 Quest 5.
