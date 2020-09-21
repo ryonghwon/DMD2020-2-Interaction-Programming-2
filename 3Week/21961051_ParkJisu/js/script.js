@@ -6,18 +6,16 @@ var logStyle = "padding:2px;background:#fff;border-radius:4px;color:#222;";
         모든 li 요소들을 선택하고 addClass 메서드를 이용하여 active 클래스를 추가합니다.
         */
         //Answer 1.
-        //var $li = $('li').addClass('active');
-        //console.log($li);
-        $('li').addClass('active');
+        var $li = $('li');
+        $li.addClass('active');
 
         //Quest 2.
         /*
         문서내의 a 요소들 중 type-2 클래스를 가진 노드를 선택하고, 해당 요소에 current 클래스를 추가합니다.
         */
         //Answer 2.
-        //var $a = $('a.type-2').addClass('current');
-        //console.log($a);
-        $('a.type-2').addClass('current');
+        var $aType = $('a.type-2');
+        $aType.addClass('current');
 
         //Quest 3.
         /*
@@ -31,8 +29,8 @@ var logStyle = "padding:2px;background:#fff;border-radius:4px;color:#222;";
         문서내의 a 요소들 중 span 요소를 포함하고 있는 노드를 선택하고, 해당 요소에 inner 클래스를 추가합니다.
         */
         //Answer 4.
-        $('a').has('span').addClass('inner');
-        
+        $('a:has(span)').addClass('inner');
+
         //Quest 5.
         /*
         문서내의 li 요소들 중 data-role 속성이 link 인 노드를 선택하고, 해당 요소에 role 클래스를 추가합니다.
@@ -46,7 +44,8 @@ var logStyle = "padding:2px;background:#fff;border-radius:4px;color:#222;";
         */
         //Answer 6.
         console.log("%c Answer 6.", logStyle);
-        console.log($('#radio-list').children().length);
+        var $radioList = $('#radio-list').children().length;
+        console.log($radioList);
 
         //Quest 7.
         /*
@@ -54,7 +53,8 @@ var logStyle = "padding:2px;background:#fff;border-radius:4px;color:#222;";
         */
         //Answer 7.
         console.log("%c Answer 7.", logStyle);
-        console.log($('.type-2').parents().index());
+        var $type2 = $('.type-2').parent();
+        console.log($type2.index());
 
         //Quest 8.
         /*
@@ -62,7 +62,8 @@ var logStyle = "padding:2px;background:#fff;border-radius:4px;color:#222;";
         */
         //Answer 8.
         console.log("%c Answer 8.", logStyle);
-        console.log($('#radio-1').val());
+        var $radio1 = $('input#radio-1[type=radio]').val();
+        console.log($radio1);
 
         //Quest 9.
         /*
@@ -70,14 +71,17 @@ var logStyle = "padding:2px;background:#fff;border-radius:4px;color:#222;";
         */
         //Answer 9.
         console.log("%c Answer 9.", logStyle);
-        console.log($('a:contains("Menu 7")'));
+        var $menu7 = $('a:contains("Menu 7")');
+        console.log($menu7);
+
 
         //Quest 10.
         /*
         아이디가 radio-2 가 아닌 input radio 요소의 부모 노드를 찾고, 자식 노드 label 요소에 emphasis 클래스를 추가합니다.
         */
         //Answer 10.
-        $('input[type=radio]:not(#radio-2)').parent().children('label').addClass('emphasis');
+        var $radio = $('input:not(#radio-2)').parent();
+        $radio.children('label').addClass('emphasis');
 
         //Quest 11.
         /*
@@ -86,7 +90,9 @@ var logStyle = "padding:2px;background:#fff;border-radius:4px;color:#222;";
         2) 모든 자식 노드 a 요소들에 bold 클래스를 추가합니다.
         */
         //Answer 11.
-        $('li.sub-last').parents('.last').children('a').addClass('emphasis');
-        $('li.sub-last').parents('.last').find('a').addClass('bold');
+        var $subLast = $('li.sub-last').parents('.last');
+        $subLast.children('a').addClass('emphasis');
+        $subLast.children().addClass('bold');
+
     });
 })(jQuery);
