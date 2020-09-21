@@ -2,7 +2,7 @@ var logStyle = "padding:2px;background:#fff;border-radius:4px;color:#222;";
 (function($){
     $(document).ready(function(){
         //Quest 1.
-        /* ***모르는 거는 넘어가기
+        /*
         모든 li 요소들을 선택하고 addClass 메서드를 이용하여 active 클래스를 추가합니다.
         */
         //Answer 1.
@@ -70,13 +70,14 @@ var logStyle = "padding:2px;background:#fff;border-radius:4px;color:#222;";
         */
         //Answer 9.
         console.log("%c Answer 9.", logStyle);
-        console.log($('a').find('Menu 7'));
+        console.log($('a:contains("Menu 7")'));
 
         //Quest 10.
         /*
         아이디가 radio-2 가 아닌 input radio 요소의 부모 노드를 찾고, 자식 노드 label 요소에 emphasis 클래스를 추가합니다.
         */
         //Answer 10.
+        $('input[type=radio]:not(#radio-2)').parent().children('label').addClass('emphasis');
 
         //Quest 11.
         /*
