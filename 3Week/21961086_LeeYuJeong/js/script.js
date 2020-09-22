@@ -101,7 +101,7 @@ var logStyle = "padding:2px;background:#fff;border-radius:4px;color:#222;";
         var $liHasSubLast = $('li.sub-last').parents('.last');
         // console.log($liHasSubLast);
         $liHasSubLast.children('a').addClass('emphasis');
-        $liHasSubLast.children().addClass('bold');
+        $liHasSubLast.find('a').addClass('bold');
 
     });
 })(jQuery);
