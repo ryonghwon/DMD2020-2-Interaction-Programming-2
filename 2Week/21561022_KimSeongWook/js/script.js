@@ -13,6 +13,8 @@ Quest 1.
 7. console.log 메서드를 이용해서 selectors 객체를 출력합니다.
 */
 // Answer 1.
+
+
 var selectors = new Object();
 
 var selectors = {
@@ -24,19 +26,34 @@ selectors.dom.push("main","footer");
 delete selectors.string;
 console.log(selectors); 
 
+
+
 /*
 Quest 2.
 1. var cars = [‘Hyundai’, ‘Kia’, ‘Samsung’, ‘GM’]; 배열을 선언하고 값을 할당합니다.
 2. cars 배열 문자열 원소를 역순으로 출력하는 반복문을 작성합니다.
-3. console.log 메서드를 이용해서 cars 를 출력합니다.
+3. console.log 메서드를 이용해서 cars 의 원소값들을 출력합니다.
 */
 // Answer 2.
 
-var koCars = ["Hyundai", "Kia", "Samsung", "GM"]; 
-koCars.reverse();
+/*
+var cars = ["Hyundai", "Kia", "Samsung", "GM"]; 
+cars.reverse();
 for(i = 0; i < 1; i++){
     console.log(koCars);
 }
+*/
+
+var cars = ["Hyundai", "Kia", "Samsung", "GM"];
+var newCars = [];
+for(var i = cars.length - 1; i >= 0; i--) {
+    console.log(cars[i]);
+    newCars.push(cars[i]);
+}
+console.log(newCars);
+
+
+
 
 /*
 Quest 3.
@@ -47,9 +64,23 @@ Quest 3.
 
 //var _name = "document";
 //console.log(typeof _name);
+/*
 for(var name in document){
     console.log(document[name]);
 }
+*/
+
+// document - html 문서 자체를 의미. 브라우저에 파일이 실행되면 포함되어 있는 절대 변수.
+console.log(document);
+//document.getElementById('')
+for(var property in document) {
+    console.log(property);
+    console.log(document[property]);
+}
+
+
+
+
 
 /*
 Quest 4.
