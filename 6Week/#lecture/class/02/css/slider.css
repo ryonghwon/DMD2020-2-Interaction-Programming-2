@@ -104,12 +104,13 @@ fieldset{border:none}
 /* ---- LAYOUT ---- */
 body{width:840px;margin:0 auto;padding-top:200px}
 .banner{overflow:hidden;position:relative;width:840px;height:320px}
-.banner .banner-wrap{position:relative;width:840px;height:320px}
-.banner .banner-container{position:relative;width:10080px;height:320px}
+.banner .banner-wrap{position:relative;width:100%;height:100%}
+.banner .banner-container{position:relative;width:10080px;height:100%}
 .banner .banner-container::after{content:'';display:block;position:relative;clear:both}
 .banner .banner-container .banner-item{position:relative;float:left;width:840px;height:100%}
 .banner .banner-container .banner-item .image-area{position:absolute;width:100%;height:100%}
 .banner .banner-container .banner-item .image-area img{display:inline-block;width:100%;vertical-align:top}
+/* .banner .banner-container .banner-item .image-area img{display:block;width:100%;height:100%;object-fit:cover} */
 .banner .banner-container .banner-item .text-area{position:relative;width:100%;text-align:center;color:#333;mix-blend-mode:hard-light}
 .banner .banner-container .banner-item .text-area .title{padding-top:60px;text-transform:capitalize;font-size:30px;font-weight:700;line-height:40px}
 .banner .banner-container .banner-item .text-area .desc{padding-top:20px;font-size:16px;font-weight:500;line-height:26px}
