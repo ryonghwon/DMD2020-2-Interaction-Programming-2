@@ -85,21 +85,19 @@
         */
         //Answer 9.
         var _id = 0;
-        var _img = $('img').length;
-        console.log(_img); // 이미지의 총 개수는 5
+        var _img = $('.banner-item').length;// 5
+        var $bannerItemWidth = $bannerItem.width();
+        var $bannerContainer = $('.banner-container');
+        $bannerContainer.css('transition', 'all .3s');
+        $bannerContainer.css('left', 0); //
+
         function slideLeft()
         {   
-            if(_id > 0){
-                $bannerItem.css('right', '-=1000px');
-                --_id;
-                console.log(_id);
-                }
-            else if(_id == 0)
-                {
-                    _id = 0;
-                }
-                dotSelect();
-                paddleCheck()
+            --_id; // 증감 연산자를 먼저 실행 되게 해야함!!!
+            $bannerContainer.css('left', _id * $bannerItemWidth * -1);
+            console.log(_id);
+            paddleCheck()
+            dotSelect();
         };
 
         /*
@@ -111,13 +109,13 @@
         
         function slideRight()
         {
-            if(_id < 4){
-            $bannerItem.css('right', '+=1000px');
-            ++_id;
+            ++_id;// 증감 연산자를 먼저 실행 되게 해야함!!!
+            $bannerContainer.css('left', _id * $bannerItemWidth * -1);
             console.log(_id);
-            }
-            dotSelect();
             paddleCheck()
+            dotSelect();
+           
+            
         };
         
         /*
@@ -127,14 +125,12 @@
         //Answer 11.
         $('.prev'). click(function(){
                     slideLeft();
-                    console.log("왼쪽 확인");
-
+                    //console.log("왼쪽 확인");
             });
 
         $('.next'). click(function(){
                     slideRight();
-                    console.log("오른쪽 확인");
-               
+                    //console.log("오른쪽 확인");
           });
         /*
         //Quest 12.
@@ -185,24 +181,24 @@
         DOM이 준비되면 초기에 paddleCheck 함수를 실행하고, slideLeft, slideRight 함수에서 동작하는 애니메이션이 끝나는 시점(callback)에 paddleCheck 함수가 실행될 수 있도록 적용합니다.
         */
         //Answer 13.
-
+        paddleCheck() // 이전 화살표 실행 하자마자 삭제
         function paddleCheck()
         {
             if(_id == 0)
             {
                 $('.prev').addClass('disabled');
             }
-            if(_id == 4)
+            else if(_id == _img - 1)
             {
                 $('.next').addClass('disabled');
             }
-            if(_id > 0 && _id > 4)
+            else 
             {
-                $('.next').removeClass('disabled');
+                $('.arrow').removeClass('disabled');
             }
         }
 
-        paddleCheck() // 시작하자마자 왼쪽 화살표가 없어지는게 맞겠죠...?
+        
         
     });
 })(jQuery);
