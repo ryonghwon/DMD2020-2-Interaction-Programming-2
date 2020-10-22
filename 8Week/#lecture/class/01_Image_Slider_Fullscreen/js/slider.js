@@ -10,6 +10,9 @@ console.log("Script Load");
             _exId = 0,
             _max = void 0;
 
+        var _bannerW = 0,
+            _bannerH = 0;
+
         var _isAni = false; // 애니메이션 여부를 판단하는 Boolean 변수 true / false
 
         function init() {
@@ -22,6 +25,7 @@ console.log("Script Load");
 
         function layout() {
             // 셀렉터를 찾아오는 함수.
+            _this.$win = $(window);
 
             _this.$banner = $('.banner');
             
@@ -39,6 +43,7 @@ console.log("Script Load");
             _this.$wrap = _this.$banner.children('.banner-wrap');
             _this.$container = _this.$wrap.children('.banner-container');
             _this.$item = _this.$container.children('.banner-item');
+            _this.$itemImg = _this.$item.find('img');
         }
 
         function setting() {
@@ -51,6 +56,7 @@ console.log("Script Load");
 
         function addEvent() {
             // 이벤트 연결 함수.
+            _this.$win.on('resize', onResize).trigger('resize');
             _this.$btnPaddle.on('click', onClikcBtnPaddle)
             _this.$dotEl.on('click', onClickDotEl);
         }
@@ -59,6 +65,36 @@ console.log("Script Load");
             // 세팅과 연결 후 초기화 함수.
             paddleSet();
             dotSet();
+        }
+
+        function onResize() {
+            _bannerW = _this.$win.width(); // 브라우저 사이즈의 width
+            _bannerH = _this.$win.height(); // 브라우저 사이즈의 height
+
+            // 리사이즈
+            _this.$container.width(_bannerW * _max);
+            _this.$item.width(_bannerW);
+            
+            // 이미지 리사이즈.
+            // 1차 방정식. 이미지의 원본 사이즈 width, height
+            // original width : original height = window width : ?
+            // 원본 이미지 가로 1069px, 세로 407px
+            var width = 0, height = 0, oWidth = 1069, oHeight = 407, top = 0, left = 0;
+            width = _bannerW;
+            height = width * oHeight / oWidth; // 방정식에 따른 높이 계산 - window width * original height / original width
+            if(height <= _bannerH){
+                height = _bannerH;
+                width = height * oWidth / oHeight; // 방정식에 따른 폭 계산 - window height * original width / original height
+            }
+
+            // 배너 사이즈를 기준으로 이미지가 가운데에 배치되도록 좌표 계산.
+            top = Math.round(_bannerH / 2 - height / 2);
+            left = Math.round(_bannerW / 2 - width / 2);
+
+            _this.$itemImg.width(width).height(height);
+            _this.$itemImg.css({ 'marginTop' : top, 'marginLeft' : left });
+
+            changeBanner(true);
         }
 
         function onClikcBtnPaddle(e) {
@@ -105,47 +141,55 @@ console.log("Script Load");
             }
         }
 
-        function changeBanner() {
-            console.log('Change Banner');
-
+        function changeBanner(bool = false) {
+            
             _isAni = true; // 애니메이션이 이뤄지는 중. - 클릭 방지
-
             //console.log(_cuId);
-            var left = 1069 * _cuId * -1;
-            var duration = 350 + Math.abs(_exId - _cuId) * 150;
-            // 기본 속도는 350 ---- + 이동하려는 ID와의 간격에 따라 150 속도를 추가한다.
-            // 1 - 350 + 150
-            // 2 - 350 + 300
-            // ...
-            // ...
-            // console.log(Math.abs(_exId - _cuId)); _exId 와 _cuId 의 비교값.(절대값 적용)
+            var left = _bannerW * _cuId * -1;
 
-            paddleSet();
-            dotSet();
+            if(!bool){
+                // 애니메이션에서 호출할 때.
+                // var duration = 350 + Math.abs(_exId - _cuId) * 150;
+                var duration = 350 + Math.abs(_exId - _cuId) * 150;
 
-            // left 속성 값을 변경.
-            // _this.$container.css({
-            //     'left' : left
-            // });
-
-            // left 속성 값을 변경하여 0.8초 동안 애니메이션 생성.
-            // _this.$container.stop(true).animate({
-            //     'left' : left
-            // }, 800);
-
-            _this.$container.stop(true)
-                .animate(
-                    { 'left' : left }, // 애니메이션이 이뤄질 스타일
-                    { // 애니메이션 옵션.
-                        'duration' : duration, // duration - 애니메이션 속도.
-                        'easing' : 'easeInOutQuad', // easing - 애니메이션의 가속도 설정 - jQuery Easing 의 설정값을 받아서 기입
-                        'complete' : function() { // complete 함수 - 애니메이션 완료 callback 함수.
-                            // console.log('Complete');
-                            _exId = _cuId;
-                            _isAni = false; // 애니메이션이 완료 - 클릭이 될 수 있는 상태.
-                        }
-                    });
-
+                // 기본 속도는 350 ---- + 이동하려는 ID와의 간격에 따라 150 속도를 추가한다.
+                // 1 - 350 + 150
+                // 2 - 350 + 300
+                // ...
+                // ...
+                // console.log(Math.abs(_exId - _cuId)); _exId 와 _cuId 의 비교값.(절대값 적용)
+    
+                paddleSet();
+                dotSet();
+    
+                // left 속성 값을 변경.
+                // _this.$container.css({
+                //     'left' : left
+                // });
+    
+                // left 속성 값을 변경하여 0.8초 동안 애니메이션 생성.
+                // _this.$container.stop(true).animate({
+                //     'left' : left
+                // }, 800);
+    
+                _this.$container.stop(true)
+                    .animate(
+                        { 'left' : left }, // 애니메이션이 이뤄질 스타일
+                        { // 애니메이션 옵션.
+                            'duration' : duration, // duration - 애니메이션 속도.
+                            'easing' : 'easeInOutQuad', // easing - 애니메이션의 가속도 설정 - jQuery Easing 의 설정값을 받아서 기입
+                            'complete' : function() { // complete 함수 - 애니메이션 완료 callback 함수.
+                                // console.log('Complete');
+                                _exId = _cuId;
+                                _isAni = false; // 애니메이션이 완료 - 클릭이 될 수 있는 상태.
+                            }
+                        });
+            }else{
+                // 리사이즈 이벤트가 발생될 때. banner의 left 값을 변경.
+                _this.$container.stop(true).css({ 'left' : left });
+                _exId = _cuId;
+                _isAni = false;
+            }
         }
 
         // ID 에 따라 Paddle 화살표의 활성화 / 비활성화 기능.
