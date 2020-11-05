@@ -78,6 +78,9 @@ console.log("Script Load");
             // 이미지 리사이즈.
             // 1차 방정식. 이미지의 원본 사이즈 width, height
             // original width : original height = window width : ?
+
+            // 높이 = 원본 이미지의 높이 * 설정하려는 가로폭 / 원본 이미지의 가로폭
+
             // 원본 이미지 가로 1069px, 세로 407px
             var width = 0, height = 0, oWidth = 1069, oHeight = 407, top = 0, left = 0;
             width = _bannerW;
