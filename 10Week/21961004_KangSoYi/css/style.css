@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+
+body {
+    width: 100vw;
+    height: 100vh;
+    position: relative;    
+    -ms-overflow-style: none; } 
+::-webkit-scrollbar {  display: none; }
+
+.section-1 { width: 100vw; height: 100vh; background-color: #000; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly;}
+.text-area { display: flex; flex-direction: column; justify-content: flex-end;}
+.big-title {font-family: 'Archivo Black', sans-serif; font-size: 80px; background-color: yellow; padding: 17px; }
+.title {font-family: 'Archivo Black', sans-serif; font-size: 40px; padding: 13px; background-color: tomato; text-transform: uppercase;}
+.img-area { width: 100%; display: flex; flex-direction: row;}
+.img-box { width: 400px; height: 333px; margin: 30px;}
+.img-box > img { width: 100%;}
+
+.section-2 { width: 100vw; height: 100vh; background-color:#000; display: flex; flex-direction: column; justify-content: space-evenly;}
+.img-area2 { flex: 1; margin: 30px; display: flex; flex-direction: row; justify-content: space-between;}
+.img-box2 { flex: 1; background-color: wheat; background-image: url(../img/4.jpg); background-size: cover;}
+.img-box2:nth-child(2) { flex:2; margin: 0 30px; background-image: url(../img/5.jpg); background-size: cover;}
+.img-box2:nth-child(3) { background-image: url(../img/6.jpg); background-size: cover;}
+.img-box2 > img { width: 80%;}
+
+.img-box3 { flex: 1; background-color: wheat;}
+.img-box3:nth-child(1) { background-image: url(../img/2.jpg); background-size: cover; }
+.img-box3:nth-child(2) { margin: 0 30px; background-image: url(../img/3.jpg); background-size: cover;}
+.img-box3:nth-child(3) { flex: 2; background-image: url(../img/1.jpg); background-size: cover;}
+.img-box3 > img { width: 100%;}
