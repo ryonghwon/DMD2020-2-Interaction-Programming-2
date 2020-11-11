@@ -85,11 +85,13 @@ a {
 	font-weight: 700;
 }
 .ranking-area {
-	width: 1000px;
+	/* width: 100em; */
 	display: flex;
+	display:-webkit-flex;
+	display:-ms-flexbox;
 	justify-content: space-between;
 	flex-wrap: wrap;
-	margin: 100px auto 0 auto;
+	margin: 100px 12em 0 12em;
 	text-align: center;
 }
 .rank {
