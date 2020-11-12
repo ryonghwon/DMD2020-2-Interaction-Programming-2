@@ -45,7 +45,3 @@ body {background:#ffffff}
 .animation{width:144px;height:144px;margin:20px;background-repeat:no-repeat;background-position:0 0}
 .zootopia{background-image:url(../img/zootopia.png);background-size:576px 432px}
 .minion{background-image:url(../img/minion.png);background-size:1008px 1008px}
-.util{padding:10px}
-.util li{display:inline-block}
-.util li + li{margin-left:10px}
-.util li a{display:block;padding:4px 15px;text-transform:uppercase;font-size:12px;font-weight:600;line-height:20px;border:1px solid #000}
