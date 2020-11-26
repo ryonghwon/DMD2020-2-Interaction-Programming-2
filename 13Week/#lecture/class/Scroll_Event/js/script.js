@@ -53,6 +53,9 @@ Scroll = {
         // 셀렉터 요소를 찾아놓는 함수.
         function layout() {
             _this.$win = $(window);
+
+            _this.$sticky = $('.section-sticky');
+
             _this.$horizontal = $('.section-horizontal');
             _this.$horizontalWrap = _this.$horizontal.find('.section-wrap');
             _this.$horizontalItem = _this.$horizontalWrap.find('.section-item');
@@ -83,11 +86,53 @@ Scroll = {
             
             _horizontalH = _winW * _horizontalMax;
             _this.$horizontal.outerHeight(_horizontalH, true);
+
+            onScroll();
+
         }
 
         function onScroll(e) {
             _scrollTop = _this.$win.scrollTop();
+            stickyScroll();
             horizontalScroll();
+        }
+
+        function stickyScroll() {
+            var imgY = 0,
+                titleY = 0,
+                descY = 0,
+                $img = _this.$sticky.find('img'),
+                $title = _this.$sticky.find('.title'),
+                $desc = _this.$sticky.find('.desc');
+                start = _this.$sticky.offset().top, 
+                end = start + _this.$sticky.outerHeight();
+
+            if(_scrollTop >= start && _scrollTop < end) {
+                _this.$sticky.addClass('fixed');
+            }else{
+                _this.$sticky.removeClass('fixed');
+            }
+
+            if(_scrollTop >= start && _scrollTop < end + _winH) {
+                // 상대적인 Y 좌표.
+                // console.log(_scrollTop - start);
+                imgY = (_scrollTop - start) * 0.2 * -1;
+            }
+
+            if(_scrollTop >= start - _winH && _scrollTop < end + _winH) {
+                titleY = (_scrollTop - start) * 0.4 * -1;
+                // titleY = Math.min(0, (_scrollTop - start) * 0.4) * -1;
+                // titleY = Math.max(0, (_scrollTop - start) * 0.4) * -1;
+                descY = (_scrollTop - start) * 0.4 * -1;
+                // descY = Math.min(0, (_scrollTop - start) * 0.4) * -1;
+                
+                // Math.min() // 두 값 중 최소값을 리턴.
+                // Math.max() // 두 값 중 최대값을 리턴.
+            }
+
+            gsap.set($img, { y: imgY });
+            gsap.set($title, { y: titleY});
+            gsap.set($desc, { y: descY });
         }
 
         function horizontalScroll() {
@@ -112,29 +157,40 @@ Scroll = {
                     // 현재 window 스크롤 Y 좌표값 - 시작지점 -> 상대적인 스크롤 Y 좌표값 : 상대적 좌표에서 부터 스크롤이 허용되는 시점의 종료 지점 길이 (.section-horizontal 의 높이 - 브라우저 세로 높이값)
                     // x : (_horizontalH - _winW) = (_scrollTop - start) : (_horizontalH - _winH)
                     x = (_horizontalH - _winW) * (_scrollTop - start) / (_horizontalH - _winH) * -1;
-                    _this.$horizontalWrap.css({ 'transform' : 'translateX(' + x + 'px)'});
+                    // _this.$horizontalWrap.css({ 'transform' : 'translateX(' + x + 'px)'});
+
+                    // gsap - Green Sock Animation Platform.
+                    // gsap.set(); // 스타일을 적용. // css()
+                    // gsap.to(); // 스타일을 애니메이션을 활용하여 적용. // animate()
+
+                    gsap.set(_this.$horizontalWrap, { x: x });
+                    // gsap.to(element, { x: x, duration: 1 });
+                
                 }else{
                     // -> .section-horizontal 이 정상적인 스크롤이 되어 보이는 것처럼 적용.
                     _this.$horizontal.addClass('fixed-end');
                     x = (_horizontalH - _winW) * -1; // 최대 가로스크롤 허용치.
-                    _this.$horizontalWrap.css({ 'transform' : 'translateX(' + x + 'px)'});
+                    // _this.$horizontalWrap.css({ 'transform' : 'translateX(' + x + 'px)'});
+                    gsap.set(_this.$horizontalWrap, { x: x });
                 }
             }else{
                 _this.$horizontal.removeClass('fixed');
                 if(_scrollTop < start) {
                     // .section-horizontal 스크롤 Y 좌표가 시작하는 지점보다 window 스크롤 Y 좌표가 낮을 때는 fixed, fixed-end 제거.
                     _this.$horizontal.removeClass('fixed-end');
-                    _this.$horizontalWrap.css({ 'transform' : 'translateX(' + x + 'px)'});
+                    // _this.$horizontalWrap.css({ 'transform' : 'translateX(' + x + 'px)'});
+                    gsap.set(_this.$horizontalWrap, { x: x });
                 }
                 if(_scrollTop >= end) {
                     // .section-horizontal 스크롤 Y 좌표가 끝나는 지점보다 window 스크롤 Y 좌표가 높을 때는 fixed-end 유지
                     _this.$horizontal.addClass('fixed-end');
                     x = (_horizontalH - _winW) * -1;
-                    _this.$horizontalWrap.css({ 'transform' : 'translateX(' + x + 'px)'});
+                    // _this.$horizontalWrap.css({ 'transform' : 'translateX(' + x + 'px)'});
+                    gsap.set(_this.$horizontalWrap, { x: x });
                 }
             }
         }
-        
+
         init();
     });
 })(jQuery);
