@@ -53,9 +53,8 @@ Scroll = {
         // 셀렉터 요소를 찾아놓는 함수.
         function layout() {
             _this.$win = $(window);
-
+            _this.$wrap = $('#wrap');
             _this.$sticky = $('.section-sticky');
-
             _this.$horizontal = $('.section-horizontal');
             _this.$horizontalWrap = _this.$horizontal.find('.section-wrap');
             _this.$horizontalItem = _this.$horizontalWrap.find('.section-item');
@@ -78,6 +77,11 @@ Scroll = {
             // _this.$win.trigger('resize');
             // _this.$win.trigger('scroll');
             _this.$win.trigger('resize').trigger('scroll');
+
+            var $text = _this.$sticky.find('.text-area');
+            gsap.set($text, { y: 100, autoAlpha: 0});
+
+            _this.$wrap.removeClass('inactive');
         }
 
         function onResize(e) {
@@ -102,6 +106,7 @@ Scroll = {
                 titleY = 0,
                 descY = 0,
                 $img = _this.$sticky.find('img'),
+                $text = _this.$sticky.find('.text-area'),
                 $title = _this.$sticky.find('.title'),
                 $desc = _this.$sticky.find('.desc');
                 start = _this.$sticky.offset().top, 
@@ -125,6 +130,13 @@ Scroll = {
                 // titleY = Math.max(0, (_scrollTop - start) * 0.4) * -1;
                 descY = (_scrollTop - start) * 0.4 * -1;
                 // descY = Math.min(0, (_scrollTop - start) * 0.4) * -1;
+
+                // -400 ~ 400
+                // x : 800 = 현재 좌표(상대좌표) 0 ~ : 끝지점의 좌표 (2000)
+                // x = 현재 좌표(상대좌표) * 800 / 끝지점의 좌표(2000) - 400
+                
+                // 지정할 좌표 : 마지막 좌표 = 현재 스크롤 좌표 : 끝나는 지점의 좌표
+                // 지정할 좌표 = 마지막 좌표 * 현재 스크롤 좌표 / 끝나는 지점의 좌표
                 
                 // Math.min() // 두 값 중 최소값을 리턴.
                 // Math.max() // 두 값 중 최대값을 리턴.
@@ -133,6 +145,23 @@ Scroll = {
             gsap.set($img, { y: imgY });
             gsap.set($title, { y: titleY});
             gsap.set($desc, { y: descY });
+
+            // if(_scrollTop >= start - _winH / 5) {
+            if(_scrollTop >= start) {
+                // console.log('text area start');
+                if(!$text.hasClass('active')) {
+                    $text.addClass('active');
+                    gsap.to($text, { y: 0, autoAlpha: 1, duration: 0.4 });
+                    // 애니메이션이 한번만 발생.
+                }
+            }else{
+                if(_scrollTop < start - _winH / 2) {
+                    if($text.hasClass('active')){
+                        $text.removeClass('active');
+                        gsap.set($text, { y: 100, autoAlpha: 0 });
+                    }
+                }
+            }
         }
 
         function horizontalScroll() {
