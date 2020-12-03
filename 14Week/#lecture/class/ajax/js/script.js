@@ -143,6 +143,103 @@ $(document).ready(function() {
         console.log(error);
     }
 
-    // url = '/movie/bi/mi/basic.nhn?code=';
+    /*
+     * iTunes
+     */
+    $.ajax({
+        url: './data/itunes.json',
+        dataType: 'json',
+        success: itunesSuccess,
+        error: itunesError
+    });
+    function itunesSuccess(result) {
+        // console.log(result); // 101 개의 아이템.
+        result = shuffleItems(result);
+        var items = result.slice(0, 10);
+        // items = shuffleItems(items);
+        var template = '';
+        var $itunesMovie = $('ol#itunes-movie');
+        $.each(items, function(index, item) {
+            // title, poster, location
+            var name = item['title'],
+                poster = item['poster'],
+                url = (item['location'] !== undefined && item['location'] !== '') ? trailersURL + item['location'] : '';
+            template += '<li class="movie-item">';
+            template +=     '<div class="poster">';
+            // template += (url !== '') ? '<a href="' + url + '" target="_blank" title="' + name + '"><img src="' + poster + '" alt="' + name + '"></a>' : '<img src="' + poster + '" alt="' + name + '">';
+            if(url !== '') {
+                template += '<a href="' + url + '" target="_blank" title="' + name + '"><img src="' + poster + '" alt="' + name + '"></a>';
+            }else{
+                template += '<img src="' + poster + '" alt="' + name + '">';
+            }
+            template +=     '</div>';
+            template +=     '<div class="name"><a href="' + url + '" target="_blank" title="' + name + '">' + name + '</a></div>';
+            template += '</li>';
+            if(index === items.length - 1) {
+                $itunesMovie.empty().html(template);
+                $itunesMovie.parent().removeClass('inactive');
+            }
+        });
+    }
+    function itunesError(error) {
+        console.log(error);
+    }
+
+    /*
+     * Naver
+     */
+    // fetch('./data/naver.json').then(result => {
+    // });
+    $.ajax({
+        url: './data/naver.json',
+        dataType: 'json',
+        success: naverSuccess,
+        error: naverError
+    });
+    function naverSuccess(result) {
+        // console.log(result);
+        var items = result['movieChartList']['RESERVE'];
+        // console.log(items);
+
+        items = shuffleItems(items);
+
+        var $naverMovie = $('#naver-movie');
+        $naverMovie.empty();
+        $.each(items, function(index, item) {
+            // console.log(index, item);
+            var name = item['movieTitle'],
+                poster = naverAssetURL + item['posterImageUrl'],
+                url = naverURL + '/movie/bi/mi/basic.nhn?code=' + item['movieCode'],
+                template = '';
+            // console.log(name, poster, url);
+            template += '<li class="movie-item">';
+            template +=     '<div class="poster"><a href="' + url + '" target="_blank" title="' + name + '"><img src="' + poster + '" alt="' + name + '"></a></div>';
+            template +=     '<div class="name"><a href="' + url + '" target="_blank" title="' + name + '">' + name + '</a></div>';
+            template += '</li>';
+            // console.log(template);
+            $naverMovie.append(template);
+            if(index === items.length - 1) {
+                $naverMovie.parent().removeClass('inactive');
+            }
+            
+            // movieTitle, movieCode, posterImageUrl
+
+            // https://movie-phinf.pstatic.net/20201127_106/1606442454078QB8P9_JPEG/movie_image.jpg
+            // /20201112_281/1605160677106alosf_JPEG/movie_image.jpg
+
+            // https://movie.naver.com/movie/bi/mi/basic.nhn?code=187357
+            // /movie/bi/mi/basic.nhn?code=
+            // 164143
+
+            // <li class="movie-item">
+            //     <div class="poster"><a href="#" target="_blank" title="name"><img src="" alt="name"></a></div>
+            //     <div class="name"><a href="#" target="_blank" title="name">name</a></div>
+            // </li>
+
+        });
+    }
+    function naverError(error) {
+        console.log(error);
+    }
 });
 })(jQuery);

@@ -9,7 +9,7 @@
                 "openDate": null,
                 "pointSum": 0,
                 "joinNumber": 0,
-                "reserveRatio": 38.65,
+                "reserveRatio": 38.91,
                 "saleRate": null,
                 "salePossibleYn": false,
                 "lendingPossibleYn": false,
@@ -29,7 +29,7 @@
                 "theater": 0,
                 "point": "0.00",
                 "formattedWeekendAudience": "0",
-                "formattedReserveRatio": "38.65",
+                "formattedReserveRatio": "38.91",
                 "formattedSaleRate": "0.00"
             },
             {
@@ -40,7 +40,7 @@
                 "openDate": null,
                 "pointSum": 0,
                 "joinNumber": 0,
-                "reserveRatio": 16.05,
+                "reserveRatio": 15.87,
                 "saleRate": null,
                 "salePossibleYn": false,
                 "lendingPossibleYn": false,
@@ -60,7 +60,7 @@
                 "theater": 0,
                 "point": "0.00",
                 "formattedWeekendAudience": "0",
-                "formattedReserveRatio": "16.05",
+                "formattedReserveRatio": "15.87",
                 "formattedSaleRate": "0.00"
             },
             {
@@ -71,7 +71,7 @@
                 "openDate": null,
                 "pointSum": 0,
                 "joinNumber": 0,
-                "reserveRatio": 11.01,
+                "reserveRatio": 11.21,
                 "saleRate": null,
                 "salePossibleYn": false,
                 "lendingPossibleYn": false,
@@ -91,7 +91,7 @@
                 "theater": 0,
                 "point": "0.00",
                 "formattedWeekendAudience": "0",
-                "formattedReserveRatio": "11.01",
+                "formattedReserveRatio": "11.21",
                 "formattedSaleRate": "0.00"
             },
             {
@@ -102,7 +102,7 @@
                 "openDate": null,
                 "pointSum": 0,
                 "joinNumber": 0,
-                "reserveRatio": 7.7,
+                "reserveRatio": 7.3,
                 "saleRate": null,
                 "salePossibleYn": false,
                 "lendingPossibleYn": false,
@@ -122,7 +122,7 @@
                 "theater": 0,
                 "point": "0.00",
                 "formattedWeekendAudience": "0",
-                "formattedReserveRatio": "7.70",
+                "formattedReserveRatio": "7.30",
                 "formattedSaleRate": "0.00"
             },
             {
@@ -133,7 +133,7 @@
                 "openDate": null,
                 "pointSum": 0,
                 "joinNumber": 0,
-                "reserveRatio": 3.21,
+                "reserveRatio": 3.16,
                 "saleRate": null,
                 "salePossibleYn": false,
                 "lendingPossibleYn": false,
@@ -153,7 +153,7 @@
                 "theater": 0,
                 "point": "0.00",
                 "formattedWeekendAudience": "0",
-                "formattedReserveRatio": "3.21",
+                "formattedReserveRatio": "3.16",
                 "formattedSaleRate": "0.00"
             },
             {
@@ -164,7 +164,7 @@
                 "openDate": null,
                 "pointSum": 0,
                 "joinNumber": 0,
-                "reserveRatio": 2.91,
+                "reserveRatio": 2.94,
                 "saleRate": null,
                 "salePossibleYn": false,
                 "lendingPossibleYn": false,
@@ -184,7 +184,7 @@
                 "theater": 0,
                 "point": "0.00",
                 "formattedWeekendAudience": "0",
-                "formattedReserveRatio": "2.91",
+                "formattedReserveRatio": "2.94",
                 "formattedSaleRate": "0.00"
             },
             {
@@ -195,7 +195,7 @@
                 "openDate": null,
                 "pointSum": 0,
                 "joinNumber": 0,
-                "reserveRatio": 2.43,
+                "reserveRatio": 2.54,
                 "saleRate": null,
                 "salePossibleYn": false,
                 "lendingPossibleYn": false,
@@ -215,38 +215,7 @@
                 "theater": 0,
                 "point": "0.00",
                 "formattedWeekendAudience": "0",
-                "formattedReserveRatio": "2.43",
-                "formattedSaleRate": "0.00"
-            },
-            {
-                "movieCode": 190381,
-                "movieTitle": "내가 죽던 날",
-                "posterImageUrl": "/20201020_93/1603162641893I0QVO_JPEG/movie_image.jpg",
-                "weekendAudience": 0,
-                "openDate": null,
-                "pointSum": 0,
-                "joinNumber": 0,
-                "reserveRatio": 1.9,
-                "saleRate": null,
-                "salePossibleYn": false,
-                "lendingPossibleYn": false,
-                "adult": false,
-                "korGradeList": [
-                    {
-                        "code": "1001002",
-                        "name": "12세 관람가"
-                    }
-                ],
-                "lastKoreanGrade": {
-                    "code": "1001002",
-                    "name": "12세 관람가"
-                },
-                "usGradeList": [],
-                "lastUsGrade": null,
-                "theater": 0,
-                "point": "0.00",
-                "formattedWeekendAudience": "0",
-                "formattedReserveRatio": "1.90",
+                "formattedReserveRatio": "2.54",
                 "formattedSaleRate": "0.00"
             },
             {
@@ -257,7 +226,7 @@
                 "openDate": null,
                 "pointSum": 0,
                 "joinNumber": 0,
-                "reserveRatio": 1.86,
+                "reserveRatio": 2.05,
                 "saleRate": null,
                 "salePossibleYn": false,
                 "lendingPossibleYn": false,
@@ -277,18 +246,18 @@
                 "theater": 0,
                 "point": "0.00",
                 "formattedWeekendAudience": "0",
-                "formattedReserveRatio": "1.86",
+                "formattedReserveRatio": "2.05",
                 "formattedSaleRate": "0.00"
             },
             {
-                "movieCode": 193195,
-                "movieTitle": "파티마의 기적",
-                "posterImageUrl": "/20201112_287/1605159975165l8iIw_JPEG/movie_image.jpg",
+                "movieCode": 190381,
+                "movieTitle": "내가 죽던 날",
+                "posterImageUrl": "/20201020_93/1603162641893I0QVO_JPEG/movie_image.jpg",
                 "weekendAudience": 0,
                 "openDate": null,
                 "pointSum": 0,
                 "joinNumber": 0,
-                "reserveRatio": 1.71,
+                "reserveRatio": 1.88,
                 "saleRate": null,
                 "salePossibleYn": false,
                 "lendingPossibleYn": false,
@@ -308,7 +277,38 @@
                 "theater": 0,
                 "point": "0.00",
                 "formattedWeekendAudience": "0",
-                "formattedReserveRatio": "1.71",
+                "formattedReserveRatio": "1.88",
+                "formattedSaleRate": "0.00"
+            },
+            {
+                "movieCode": 193195,
+                "movieTitle": "파티마의 기적",
+                "posterImageUrl": "/20201112_287/1605159975165l8iIw_JPEG/movie_image.jpg",
+                "weekendAudience": 0,
+                "openDate": null,
+                "pointSum": 0,
+                "joinNumber": 0,
+                "reserveRatio": 1.8,
+                "saleRate": null,
+                "salePossibleYn": false,
+                "lendingPossibleYn": false,
+                "adult": false,
+                "korGradeList": [
+                    {
+                        "code": "1001002",
+                        "name": "12세 관람가"
+                    }
+                ],
+                "lastKoreanGrade": {
+                    "code": "1001002",
+                    "name": "12세 관람가"
+                },
+                "usGradeList": [],
+                "lastUsGrade": null,
+                "theater": 0,
+                "point": "0.00",
+                "formattedWeekendAudience": "0",
+                "formattedReserveRatio": "1.80",
                 "formattedSaleRate": "0.00"
             }
         ]
