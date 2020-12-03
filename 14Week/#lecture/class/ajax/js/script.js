@@ -28,6 +28,22 @@ function shuffle(max) {
 (function($){
 $(document).ready(function() {
 
+    function listAnim($list) {
+        var $items = $list.find('li');
+        var randomNumbers = shuffle($items.length);
+        // console.log($items);
+        // console.log(randomNumbers);
+        $.each($items, function(index, item) {
+            var $item = $(item),
+                // delay = 0.1 * index;
+                delay = 0.05 * randomNumbers[index];
+                // 0 1 2 3 .... 9.
+                // randomNumbers[0], randomNumbers[1]...
+            gsap.set($item, {y: 50, autoAlpha: 0});
+            gsap.to($item, {y: 0, autoAlpha: 1, duration: 0.25, delay: delay, ease: 'power2.inOut'}); 
+        });
+    }
+
     /*
      * Class List AJAX.
      */
@@ -134,7 +150,7 @@ $(document).ready(function() {
             if(index === items.length - 1) {
                 // console.log(template);
                 $classList.empty().html(template);
-                $classList.parent().removeClass('inactive');
+                // $classList.parent().removeClass('inactive');
             }
         });
     }
@@ -143,46 +159,55 @@ $(document).ready(function() {
         console.log(error);
     }
 
-    /*
-     * iTunes
-     */
-    $.ajax({
-        url: './data/itunes.json',
-        dataType: 'json',
-        success: itunesSuccess,
-        error: itunesError
+    var $btnItunes = $('#btn-itunes');
+    $btnItunes.on('click', function(e) {
+        e.preventDefault();
+        itunesLoad();
     });
-    function itunesSuccess(result) {
-        // console.log(result); // 101 개의 아이템.
-        result = shuffleItems(result);
-        var items = result.slice(0, 10);
-        // items = shuffleItems(items);
-        var template = '';
-        var $itunesMovie = $('ol#itunes-movie');
-        $.each(items, function(index, item) {
-            // title, poster, location
-            var name = item['title'],
-                poster = item['poster'],
-                url = (item['location'] !== undefined && item['location'] !== '') ? trailersURL + item['location'] : '';
-            template += '<li class="movie-item">';
-            template +=     '<div class="poster">';
-            // template += (url !== '') ? '<a href="' + url + '" target="_blank" title="' + name + '"><img src="' + poster + '" alt="' + name + '"></a>' : '<img src="' + poster + '" alt="' + name + '">';
-            if(url !== '') {
-                template += '<a href="' + url + '" target="_blank" title="' + name + '"><img src="' + poster + '" alt="' + name + '"></a>';
-            }else{
-                template += '<img src="' + poster + '" alt="' + name + '">';
-            }
-            template +=     '</div>';
-            template +=     '<div class="name"><a href="' + url + '" target="_blank" title="' + name + '">' + name + '</a></div>';
-            template += '</li>';
-            if(index === items.length - 1) {
-                $itunesMovie.empty().html(template);
-                $itunesMovie.parent().removeClass('inactive');
-            }
+
+    function itunesLoad() {
+        /*
+         * iTunes
+         */
+        $.ajax({
+            url: './data/itunes.json',
+            dataType: 'json',
+            success: itunesSuccess,
+            error: itunesError
         });
-    }
-    function itunesError(error) {
-        console.log(error);
+        function itunesSuccess(result) {
+            // console.log(result); // 101 개의 아이템.
+            result = shuffleItems(result);
+            var items = result.slice(0, 10);
+            // items = shuffleItems(items);
+            var template = '';
+            var $itunesMovie = $('ol#itunes-movie');
+            $.each(items, function(index, item) {
+                // title, poster, location
+                var name = item['title'],
+                    poster = item['poster'],
+                    url = (item['location'] !== undefined && item['location'] !== '') ? trailersURL + item['location'] : '';
+                template += '<li class="movie-item">';
+                template +=     '<div class="poster">';
+                // template += (url !== '') ? '<a href="' + url + '" target="_blank" title="' + name + '"><img src="' + poster + '" alt="' + name + '"></a>' : '<img src="' + poster + '" alt="' + name + '">';
+                if(url !== '') {
+                    template += '<a href="' + url + '" target="_blank" title="' + name + '"><img src="' + poster + '" alt="' + name + '"></a>';
+                }else{
+                    template += '<img src="' + poster + '" alt="' + name + '">';
+                }
+                template +=     '</div>';
+                template +=     '<div class="name"><a href="' + url + '" target="_blank" title="' + name + '">' + name + '</a></div>';
+                template += '</li>';
+                if(index === items.length - 1) {
+                    $itunesMovie.empty().html(template);
+                    $itunesMovie.parent().removeClass('inactive');
+                    listAnim($itunesMovie);
+                }
+            });
+        }
+        function itunesError(error) {
+            console.log(error);
+        }
     }
 
     /*
@@ -220,6 +245,7 @@ $(document).ready(function() {
             $naverMovie.append(template);
             if(index === items.length - 1) {
                 $naverMovie.parent().removeClass('inactive');
+                listAnim($naverMovie);
             }
             
             // movieTitle, movieCode, posterImageUrl
