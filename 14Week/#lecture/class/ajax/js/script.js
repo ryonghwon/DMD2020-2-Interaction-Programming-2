@@ -28,6 +28,10 @@ function shuffle(max) {
 (function($){
 $(document).ready(function() {
 
+    /*
+     * Class List AJAX.
+     */
+
     // $.ajax()
     // jQuery.ajax()
     /*
@@ -77,7 +81,7 @@ $(document).ready(function() {
             console.log(items[i]);
         }
         // for in 반복문.
-        for(var iㅜㅇㄷㅌ in items) {
+        for(var item in items) {
             console.log(items[i]);
         }
         // for of 반복문.
@@ -103,6 +107,9 @@ $(document).ready(function() {
                 name = item['name'],
                 role = item['role'],
                 id = item['id']; // git username - https://github.com + / + username(id) -> https://github.com/id
+            if(index === 0) {
+                template += '<li class="head"><div class="sort">구분</div><div class="name">이름</div><div class="id">아이디</div></li>';
+            }
             // console.log(number, name, role, id);
             // number, name, role, id
             template += '<li>';
@@ -122,31 +129,19 @@ $(document).ready(function() {
             // }
             template +=     '</div>';
             template += '</li>';
+            // index 가 가장 마지막 부분일 때.
+            // DOM 조작.(렌더링)
+            if(index === items.length - 1) {
+                // console.log(template);
+                $classList.empty().html(template);
+                $classList.parent().removeClass('inactive');
+            }
         });
-        // console.log(template);
-        $classList.empty().html(template);
-        $classList.parent().removeClass('inactive');
-        
-        
-
-        // <li class="head">
-        //         <div class="sort">구분</div>
-        //         <div class="name">이름</div>
-        //         <div class="id">아이디</div>
-        //     </li><li>
-        //         <div class="sort">교번 : <i>00000000</i></div>
-        //         <div class="name">이름</div>
-        //         <div class="id"><a href="#" target="_blank" title="이름 git">id</a></div>
-        //     </li>
-
-        
-        // todo : html 형태로 가공해서 화면에 DOM 렌더링.
     }
     function classError(error) {
         // 비동기 통신 실패...
         console.log(error);
     }
-
 
     // url = '/movie/bi/mi/basic.nhn?code=';
 });
