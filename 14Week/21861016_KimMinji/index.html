@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>AJAX</title>
+<link rel="stylesheet" href="./css/style.css"/>
+</head>
+<body>
+<h1 class="blind">AJAX</h1>
+<div id="wrap">
+    <div class="chart-section inactive">
+        <h1>VIBE [ 오늘 Top 15 ]</h1>
+        <ol id="vibe-music" class="music-chart">
+            <li class="music-item">
+                <div class="album_cover"><a href="#" target="_blank" title="name"><img src="" alt="name"></a></div>
+                <div class="rank">rank</div>
+                <div class="title"><a href="#" target="_blank" title="name">title</a></div>
+                <div class="releaseDate">releaseDate</div>
+                <div class="genres">genres</div>
+            </li>
+        </ol>
+    </div>
+    <div class="chart-section inactive">
+        <h1>Billboard [ Hot 15 ]</h1>
+        <ol id="billboard-music" class="music-chart">
+            <li class="music-item">
+                <div class="album_cover"><a href="#" target="_blank" title="name"><img src="" alt="name"></a></div>
+                <div class="rank">rank</div>
+                <div class="title"><a href="#" target="_blank" title="name">title</a></div>
+                <div class="releaseDate">releaseDate</div>
+                <div class="genres">genres</div>
+            </li>
+        </ol>
+    </div>
+</div>
+<script src="./vendor/jquery/jquery.min.js" type="text/javascript"></script>
+<script src="./vendor/gsap/gsap.min.js" type="text/javascript"></script>
+<script src="./js/script.js" type="text/javascript"></script>
+<!-- <script src="./js/script_complete.js" type="text/javascript"></script> -->
+</body>
+</html>
