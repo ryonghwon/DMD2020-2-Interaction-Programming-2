@@ -1,0 +1,316 @@
+{
+    "movieChartList": {
+        "RESERVE": [
+            {
+                "movieCode": 199393,
+                "movieTitle": "조제",
+                "posterImageUrl": "/20201116_276/1605491658399poUOC_JPEG/movie_image.jpg",
+                "weekendAudience": 0,
+                "openDate": null,
+                "pointSum": 0,
+                "joinNumber": 0,
+                "reserveRatio": 38.91,
+                "saleRate": null,
+                "salePossibleYn": false,
+                "lendingPossibleYn": false,
+                "adult": false,
+                "korGradeList": [
+                    {
+                        "code": "1001002",
+                        "name": "15세 관람가"
+                    }
+                ],
+                "lastKoreanGrade": {
+                    "code": "1001002",
+                    "name": "15세 관람가"
+                },
+                "usGradeList": [],
+                "lastUsGrade": null,
+                "theater": 0,
+                "point": "0.00",
+                "formattedWeekendAudience": "0",
+                "formattedReserveRatio": "38.91",
+                "formattedSaleRate": "0.00"
+            },
+            {
+                "movieCode": 134963,
+                "movieTitle": "라라랜드",
+                "posterImageUrl": "/20161123_188/1479862185516tYkKO_JPEG/movie_image.jpg",
+                "weekendAudience": 0,
+                "openDate": null,
+                "pointSum": 0,
+                "joinNumber": 0,
+                "reserveRatio": 15.87,
+                "saleRate": null,
+                "salePossibleYn": false,
+                "lendingPossibleYn": false,
+                "adult": false,
+                "korGradeList": [
+                    {
+                        "code": "1001002",
+                        "name": "12세 관람가"
+                    }
+                ],
+                "lastKoreanGrade": {
+                    "code": "1001002",
+                    "name": "12세 관람가"
+                },
+                "usGradeList": [],
+                "lastUsGrade": null,
+                "theater": 0,
+                "point": "0.00",
+                "formattedWeekendAudience": "0",
+                "formattedReserveRatio": "15.87",
+                "formattedSaleRate": "0.00"
+            },
+            {
+                "movieCode": 190722,
+                "movieTitle": "어바웃타임",
+                "posterImageUrl": "/20131115_243/1384498185621awKv1_JPEG/movie_image.jpg",
+                "weekendAudience": 0,
+                "openDate": null,
+                "pointSum": 0,
+                "joinNumber": 0,
+                "reserveRatio": 11.21,
+                "saleRate": null,
+                "salePossibleYn": false,
+                "lendingPossibleYn": false,
+                "adult": false,
+                "korGradeList": [
+                    {
+                        "code": "1001003",
+                        "name": "15세 관람가"
+                    }
+                ],
+                "lastKoreanGrade": {
+                    "code": "1001003",
+                    "name": "15세 관람가"
+                },
+                "usGradeList": [],
+                "lastUsGrade": null,
+                "theater": 0,
+                "point": "0.00",
+                "formattedWeekendAudience": "0",
+                "formattedReserveRatio": "11.21",
+                "formattedSaleRate": "0.00"
+            },
+            {
+                "movieCode": 193970,
+                "movieTitle": "더 프롬",
+                "posterImageUrl": "/20201127_106/1606442454078QB8P9_JPEG/movie_image.jpg",
+                "weekendAudience": 0,
+                "openDate": null,
+                "pointSum": 0,
+                "joinNumber": 0,
+                "reserveRatio": 7.3,
+                "saleRate": null,
+                "salePossibleYn": false,
+                "lendingPossibleYn": false,
+                "adult": false,
+                "korGradeList": [
+                    {
+                        "code": "1001002",
+                        "name": "12세 관람가"
+                    }
+                ],
+                "lastKoreanGrade": {
+                    "code": "1001002",
+                    "name": "12세 관람가"
+                },
+                "usGradeList": [],
+                "lastUsGrade": null,
+                "theater": 0,
+                "point": "0.00",
+                "formattedWeekendAudience": "0",
+                "formattedReserveRatio": "7.30",
+                "formattedSaleRate": "0.00"
+            },
+            {
+                "movieCode": 190010,
+                "movieTitle": "테넷",
+                "posterImageUrl": "/20200728_86/15959209130236RePy_JPEG/movie_image.jpg",
+                "weekendAudience": 0,
+                "openDate": null,
+                "pointSum": 0,
+                "joinNumber": 0,
+                "reserveRatio": 3.16,
+                "saleRate": null,
+                "salePossibleYn": false,
+                "lendingPossibleYn": false,
+                "adult": false,
+                "korGradeList": [
+                    {
+                        "code": "1001004",
+                        "name": "12세 관람가"
+                    }
+                ],
+                "lastKoreanGrade": {
+                    "code": "1001004",
+                    "name": "12세 관람가"
+                },
+                "usGradeList": [],
+                "lastUsGrade": null,
+                "theater": 0,
+                "point": "0.00",
+                "formattedWeekendAudience": "0",
+                "formattedReserveRatio": "3.16",
+                "formattedSaleRate": "0.00"
+            },
+            {
+                "movieCode": 167638,
+                "movieTitle": "완벽한 타인",
+                "posterImageUrl": "/20181106_289/1541478936071tmadh_JPEG/movie_image.jpg",
+                "weekendAudience": 0,
+                "openDate": null,
+                "pointSum": 0,
+                "joinNumber": 0,
+                "reserveRatio": 2.94,
+                "saleRate": null,
+                "salePossibleYn": false,
+                "lendingPossibleYn": false,
+                "adult": false,
+                "korGradeList": [
+                    {
+                        "code": "1001002",
+                        "name": "15세 관람가"
+                    }
+                ],
+                "lastKoreanGrade": {
+                    "code": "1001002",
+                    "name": "15세 관람가"
+                },
+                "usGradeList": [],
+                "lastUsGrade": null,
+                "theater": 0,
+                "point": "0.00",
+                "formattedWeekendAudience": "0",
+                "formattedReserveRatio": "2.94",
+                "formattedSaleRate": "0.00"
+            },
+            {
+                "movieCode": 186613,
+                "movieTitle": "작은 아씨들",
+                "posterImageUrl": "/20200309_102/1583733575200NVLwA_JPEG/movie_image.jpg",
+                "weekendAudience": 0,
+                "openDate": null,
+                "pointSum": 0,
+                "joinNumber": 0,
+                "reserveRatio": 7.7,
+                "saleRate": null,
+                "salePossibleYn": false,
+                "lendingPossibleYn": false,
+                "adult": false,
+                "korGradeList": [
+                    {
+                        "code": "1001001",
+                        "name": "전체 관람가"
+                    }
+                ],
+                "lastKoreanGrade": {
+                    "code": "1001001",
+                    "name": "전체 관람가"
+                },
+                "usGradeList": [],
+                "lastUsGrade": null,
+                "theater": 0,
+                "point": "0.00",
+                "formattedWeekendAudience": "0",
+                "formattedReserveRatio": "7.70",
+                "formattedSaleRate": "0.00"
+            },
+            {
+                "movieCode": 158611,
+                "movieTitle": "레이디 버드",
+                "posterImageUrl": "/20180326_207/1522051022222Wrub8_JPEG/movie_image.jpg",
+                "weekendAudience": 0,
+                "openDate": null,
+                "pointSum": 0,
+                "joinNumber": 0,
+                "reserveRatio": 2.05,
+                "saleRate": null,
+                "salePossibleYn": false,
+                "lendingPossibleYn": false,
+                "adult": false,
+                "korGradeList": [
+                    {
+                        "code": "1001001",
+                        "name": "15세 관람가"
+                    }
+                ],
+                "lastKoreanGrade": {
+                    "code": "1001001",
+                    "name": "15세 관람가"
+                },
+                "usGradeList": [],
+                "lastUsGrade": null,
+                "theater": 0,
+                "point": "0.00",
+                "formattedWeekendAudience": "0",
+                "formattedReserveRatio": "2.05",
+                "formattedSaleRate": "0.00"
+            },
+            {
+                "movieCode": 161967,
+                "movieTitle": "기생충",
+                "posterImageUrl": "/20190528_36/1559024198386YVTEw_JPEG/movie_image.jpg",
+                "weekendAudience": 0,
+                "openDate": null,
+                "pointSum": 0,
+                "joinNumber": 0,
+                "reserveRatio": 1.88,
+                "saleRate": null,
+                "salePossibleYn": false,
+                "lendingPossibleYn": false,
+                "adult": false,
+                "korGradeList": [
+                    {
+                        "code": "1001002",
+                        "name": "15세 관람가"
+                    }
+                ],
+                "lastKoreanGrade": {
+                    "code": "1001002",
+                    "name": "15세 관람가"
+                },
+                "usGradeList": [],
+                "lastUsGrade": null,
+                "theater": 0,
+                "point": "0.00",
+                "formattedWeekendAudience": "0",
+                "formattedReserveRatio": "1.88",
+                "formattedSaleRate": "0.00"
+            },
+            {
+                "movieCode": 175092,
+                "movieTitle": "먼 훗날 우리",
+                "posterImageUrl": "/20180516_300/15264574387234QNai_JPEG/movie_image.jpg",
+                "weekendAudience": 0,
+                "openDate": null,
+                "pointSum": 0,
+                "joinNumber": 0,
+                "reserveRatio": 16.05,
+                "saleRate": null,
+                "salePossibleYn": false,
+                "lendingPossibleYn": false,
+                "adult": false,
+                "korGradeList": [
+                    {
+                        "code": "1001003",
+                        "name": "15세 관람가"
+                    }
+                ],
+                "lastKoreanGrade": {
+                    "code": "1001003",
+                    "name": "15세 관람가"
+                },
+                "usGradeList": [],
+                "lastUsGrade": null,
+                "theater": 0,
+                "point": "0.00",
+                "formattedWeekendAudience": "0",
+                "formattedReserveRatio": "16.05",
+                "formattedSaleRate": "0.00"
+            }
+        ]
+    }
+}
